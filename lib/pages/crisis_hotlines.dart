@@ -1,7 +1,7 @@
 // ignore_for_file: prefer_const_constructors
 
 import 'package:flutter/material.dart';
-import 'package:frontend/util/custom_tile.dart';
+import 'package:frontend/util/hotline_tile.dart';
 
 class CrisisHotlines extends StatefulWidget {
   const CrisisHotlines({super.key});
@@ -43,12 +43,12 @@ class _CrisisHotlinesState extends State<CrisisHotlines> {
         body: ListView.builder(
             itemCount: hotlines.length,
             itemBuilder: (context, index) {
-              return CustomTile(
+              return HotlineTile(
                 // algorithm that modifies avatar color absed on index
                 avatarColor:
                     index % 2 == 0 ? Color(0xFF647AFF) : Color(0xFFB0BCFF),
-                tileTitle: hotlines[index][0],
-                tileSubTitle: hotlines[index][1],
+                tileName: hotlines[index][0],
+                tileHotline: hotlines[index][1],
               );
             }));
   }
