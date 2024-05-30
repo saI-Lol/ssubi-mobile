@@ -42,6 +42,7 @@ class _CrisisHotlinesState extends State<CrisisHotlines> {
             itemCount: hotlines.length,
             itemBuilder: (context, index) {
               return HotlineTile(
+                // algorithm that modifies avatar color absed on index
                 avatarColor:
                     index % 2 == 0 ? Color(0xFF647AFF) : Color(0xFFB0BCFF),
                 hotlineName: hotlines[index][0],
