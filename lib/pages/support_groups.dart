@@ -1,6 +1,7 @@
 // ignore_for_file: prefer_const_literals_to_create_immutables, prefer_const_constructors
 
 import 'package:flutter/material.dart';
+import 'package:frontend/tabs/all_groups.dart';
 
 class SupportGroups extends StatelessWidget {
   const SupportGroups({super.key});
@@ -10,6 +11,7 @@ class SupportGroups extends StatelessWidget {
     return DefaultTabController(
         length: 2,
         child: Scaffold(
+          backgroundColor: Color(0xFFFCFEFF),
           appBar: AppBar(
             elevation: 0,
             title: Text('Support Groups',
@@ -39,9 +41,7 @@ class SupportGroups extends StatelessWidget {
                 Expanded(
                   child: TabBarView(children: [
                     // First Tab
-                    Scaffold(
-                      body: Text('All Support Groups'),
-                    ),
+                    AllGroups(),
 
                     // Second Tab
                     Scaffold(
