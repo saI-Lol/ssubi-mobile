@@ -19,6 +19,15 @@ class _CrisisHotlinesState extends State<CrisisHotlines> {
           'Crisis Hotlines',
           style: TextStyle(color: Color(0xFFFCFEFF)),
         ),
+        leading: IconButton(
+          icon: Icon(
+            Icons.arrow_back,
+            color: Color(0xFFFCFEFF),
+          ),
+          onPressed: () {
+            Navigator.pop(context);
+          },
+        ),
       ),
     );
   }
