@@ -9,37 +9,42 @@ class CrisisHotlines extends StatefulWidget {
 }
 
 class _CrisisHotlinesState extends State<CrisisHotlines> {
+  // list of hotline tiles
+  List hotlines = [
+    ['Strong Minds Uganda', '0800 800 800'],
+    ['Mindverse', '0600 600 600'],
+    ['Mending Thoughts Ug', '0500 500 500'],
+    ['Peaceful Mind', '0300 300 300']
+  ];
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      // const keyword removed
-      backgroundColor: Color(0xFFFCFEFF), // Bg color hexcode is #FCFEFF
-      appBar: AppBar(
-        elevation: 0,
-        backgroundColor: Color(0xFF647AFF),
-        title: Text(
-          'Crisis Hotlines',
-          style: TextStyle(color: Color(0xFFFCFEFF)),
-        ),
-        leading: IconButton(
-          icon: Icon(
-            Icons.arrow_back,
-            color: Color(0xFFFCFEFF),
+        // const keyword removed
+        backgroundColor: Color(0xFFFCFEFF), // Bg color hexcode is #FCFEFF
+        appBar: AppBar(
+          elevation: 0,
+          backgroundColor: Color(0xFF647AFF),
+          title: Text(
+            'Crisis Hotlines',
+            style: TextStyle(color: Color(0xFFFCFEFF)),
           ),
-          onPressed: () {
-            Navigator.pop(context);
-          },
-        ),
-      ),
-      body: ListView(
-        children: [
-          // Hotline Tiles
-          HotlineTile(
-            hotlineName: 'Strong Minds Uganda',
-            hotlineNumber: '0800 800 800',
+          leading: IconButton(
+            icon: Icon(
+              Icons.arrow_back,
+              color: Color(0xFFFCFEFF),
+            ),
+            onPressed: () {
+              Navigator.pop(context);
+            },
           ),
-        ],
-      ),
-    );
+        ),
+        body: ListView.builder(
+            itemCount: hotlines.length,
+            itemBuilder: (context, index) {
+              return HotlineTile(
+                hotlineName: hotlines[index][0],
+                hotlineNumber: hotlines[index][1],
+              );
+            }));
   }
 }

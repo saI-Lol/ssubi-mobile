@@ -10,13 +10,12 @@ class HotlineTile extends StatelessWidget {
     super.key,
     required this.hotlineName,
     required this.hotlineNumber,
-    // required this.hotlineInitial,
   });
 
   @override
   Widget build(BuildContext context) {
     return Padding(
-      padding: EdgeInsets.all(16.0),
+      padding: EdgeInsets.fromLTRB(12.0, 12.0, 12.0, 0),
       child: Container(
         decoration: BoxDecoration(
           // color: Colors.grey[200],
@@ -39,8 +38,8 @@ class HotlineTile extends StatelessWidget {
                   radius: 24,
                   backgroundColor: Color(0xFF647AFF),
                   child: Text(
-                    'S',
-                    style: TextStyle(fontSize: 32.0, color: Color(0xFFFCFEFF)),
+                    hotlineName[0].toUpperCase(),
+                    style: TextStyle(fontSize: 28.0, color: Color(0xFFFCFEFF)),
                   ),
                 ),
 
@@ -81,7 +80,7 @@ class HotlineTile extends StatelessWidget {
                     style: TextStyle(color: Color(0xFFFCFEFF), fontSize: 14.0),
                   ),
                   style: TextButton.styleFrom(
-                      backgroundColor: Color(0xFF647AFF),
+                      backgroundColor: Color(0xFF58D68D),
                       shape: RoundedRectangleBorder(
                           borderRadius: BorderRadius.circular(6))),
                 ),
