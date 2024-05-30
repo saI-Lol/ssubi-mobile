@@ -3,6 +3,7 @@ import 'package:flutter/material.dart';
 class HotlineTile extends StatelessWidget {
   final String hotlineName;
   final String hotlineNumber;
+  final Color avatarColor;
   // final String hotlineInitial;
 
   // Hotline class constructor
@@ -10,6 +11,7 @@ class HotlineTile extends StatelessWidget {
     super.key,
     required this.hotlineName,
     required this.hotlineNumber,
+    required this.avatarColor,
   });
 
   @override
@@ -36,10 +38,13 @@ class HotlineTile extends StatelessWidget {
                 // Circle avatar with hotlineInitial
                 CircleAvatar(
                   radius: 24,
-                  backgroundColor: Color(0xFF647AFF),
+                  backgroundColor: avatarColor,
                   child: Text(
                     hotlineName[0].toUpperCase(),
-                    style: TextStyle(fontSize: 28.0, color: Color(0xFFFCFEFF)),
+                    style: TextStyle(
+                        fontSize: 28.0,
+                        color: Color(0xFFFCFEFF),
+                        fontWeight: FontWeight.w200),
                   ),
                 ),
 
