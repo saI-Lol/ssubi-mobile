@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:frontend/util/hotline_tile.dart';
 
 class CrisisHotlines extends StatefulWidget {
   const CrisisHotlines({super.key});
@@ -14,6 +15,7 @@ class _CrisisHotlinesState extends State<CrisisHotlines> {
       // const keyword removed
       backgroundColor: Color(0xFFFCFEFF), // Bg color hexcode is #FCFEFF
       appBar: AppBar(
+        elevation: 0,
         backgroundColor: Color(0xFF647AFF),
         title: Text(
           'Crisis Hotlines',
@@ -28,6 +30,15 @@ class _CrisisHotlinesState extends State<CrisisHotlines> {
             Navigator.pop(context);
           },
         ),
+      ),
+      body: ListView(
+        children: [
+          // Hotline Tiles
+          HotlineTile(
+            hotlineName: 'Strong Minds Uganda',
+            hotlineNumber: '0800 800 800',
+          ),
+        ],
       ),
     );
   }
