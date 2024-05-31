@@ -1,16 +1,17 @@
+// ignore_for_file: prefer_const_constructors, prefer_const_constructors_in_immutables
+
 import 'package:flutter/material.dart';
 
 class HotlineTile extends StatelessWidget {
-  final String hotlineName;
-  final String hotlineNumber;
+  final String tileName;
+  final String tileHotline;
   final Color avatarColor;
-  // final String hotlineInitial;
 
-  // Hotline class constructor
+  // HotlineTile class constructor
   HotlineTile({
     super.key,
-    required this.hotlineName,
-    required this.hotlineNumber,
+    required this.tileName,
+    required this.tileHotline,
     required this.avatarColor,
   });
 
@@ -20,7 +21,6 @@ class HotlineTile extends StatelessWidget {
       padding: EdgeInsets.fromLTRB(12.0, 12.0, 12.0, 0),
       child: Container(
         decoration: BoxDecoration(
-          // color: Colors.grey[200],
           border: Border(
             bottom: BorderSide(
               color: Color(0xFFEEEEEE),
@@ -32,45 +32,50 @@ class HotlineTile extends StatelessWidget {
         child: Row(
           mainAxisAlignment: MainAxisAlignment.spaceBetween,
           children: [
-            // Row with avatar and text details column
-            Row(
-              children: [
-                // Circle avatar with hotlineInitial
-                CircleAvatar(
-                  radius: 24,
-                  backgroundColor: avatarColor,
-                  child: Text(
-                    hotlineName[0].toUpperCase(),
-                    style: TextStyle(
-                        fontSize: 28.0,
-                        color: Color(0xFFFCFEFF),
-                        fontWeight: FontWeight.w200),
+            // Expanded to take available space
+            Expanded(
+              child: Row(
+                children: [
+                  // Circle avatar with tileName initial
+                  CircleAvatar(
+                    radius: 24,
+                    backgroundColor: avatarColor,
+                    child: Text(
+                      tileName[0].toUpperCase(),
+                      style: TextStyle(
+                          fontSize: 28.0,
+                          color: Color(0xFFFCFEFF),
+                          fontWeight: FontWeight.w200),
+                    ),
                   ),
-                ),
 
-                // sized box to separate avatar and column
-                SizedBox(
-                  width: 16.0,
-                ),
+                  // SizedBox to separate avatar and column
+                  SizedBox(width: 16.0),
 
-                // Column with hotline details
-                Column(
-                  crossAxisAlignment: CrossAxisAlignment.start,
-                  children: [
-                    // Text(hotlineInitial[0].toUpperCase()),
-                    Text(
-                      hotlineName,
-                      style:
-                          TextStyle(fontSize: 16.0, color: Color(0xFF32313A)),
+                  // Flexible to constrain column
+                  Flexible(
+                    child: Column(
+                      crossAxisAlignment: CrossAxisAlignment.start,
+                      children: [
+                        Text(
+                          tileName,
+                          overflow: TextOverflow.ellipsis,
+                          softWrap: false,
+                          style: TextStyle(
+                              fontSize: 16.0, color: Color(0xFF32313A)),
+                        ),
+                        Text(
+                          tileHotline,
+                          overflow: TextOverflow.ellipsis,
+                          softWrap: false,
+                          style: TextStyle(
+                              fontSize: 12.0, color: Color(0xFF666666)),
+                        ),
+                      ],
                     ),
-                    Text(
-                      hotlineNumber,
-                      style:
-                          TextStyle(fontSize: 12.0, color: Color(0xFF666666)),
-                    ),
-                  ],
-                ),
-              ],
+                  ),
+                ],
+              ),
             ),
 
             // Button
