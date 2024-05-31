@@ -19,21 +19,21 @@ class TabBarTile extends StatelessWidget {
   Widget build(BuildContext context) {
     return Padding(
       padding: EdgeInsets.fromLTRB(0, 12.0, 0, 0),
-      child: Container(
-        decoration: BoxDecoration(
-          border: Border(
-            bottom: BorderSide(
-              color: Color(0xFFEEEEEE),
-              width: 1,
+      child: GestureDetector(
+        onTap: () {
+          // onTap logic here for navigating to support group details
+          Navigator.pushNamed(context, '/groupEvents');
+        },
+        child: Container(
+          decoration: BoxDecoration(
+            border: Border(
+              bottom: BorderSide(
+                color: Color(0xFFEEEEEE),
+                width: 1,
+              ),
             ),
           ),
-        ),
-        padding: EdgeInsets.fromLTRB(0, 0, 0, 12.0),
-        child: GestureDetector(
-          onTap: () {
-            // onTap logic here for navigating to support group details
-            Navigator.pushNamed(context, '/groupEvents');
-          },
+          padding: EdgeInsets.fromLTRB(0, 0, 0, 12.0),
           child: Row(
             mainAxisAlignment: MainAxisAlignment.spaceBetween,
             children: [
