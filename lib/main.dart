@@ -1,5 +1,8 @@
+// ignore_for_file: prefer_const_constructors
+
 import 'package:flutter/material.dart';
-import 'package:frontend/pages/crisis_hotlines.dart';
+// import 'package:frontend/pages/crisis_hotlines.dart';
+import 'package:frontend/pages/group_events.dart';
 import 'package:frontend/pages/support_groups.dart';
 
 void main() {
@@ -11,9 +14,13 @@ class MainApp extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return const MaterialApp(
+    return MaterialApp(
       debugShowCheckedModeBanner: false, // Remove the debug banner
       home: SupportGroups(), // Crisis Hotlines Widget
+      routes: {
+        '/supportGroups': (context) => const SupportGroups(),
+        '/groupEvents': (context) => const GroupEvents(),
+      },
     );
   }
 }
