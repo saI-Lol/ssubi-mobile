@@ -33,7 +33,7 @@ class _GroupEventsState extends State<GroupEvents> {
             // Name of respective Mental Health Facility
             Text(
               'Strong Minds Uganda',
-              style: TextStyle(fontSize: 12.0, color: Color(0xFFFCFEFF)),
+              style: TextStyle(fontSize: 12.0, color: Color(0xFFD1D7FF)),
             ),
           ],
         ),
