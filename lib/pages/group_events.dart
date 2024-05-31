@@ -71,9 +71,14 @@ class _GroupEventsState extends State<GroupEvents> {
                       AspectRatio(
                         aspectRatio: 4 / 3,
                         child: Container(
-                          color: Colors.purple,
-                          padding: EdgeInsets.all(10.0),
+                          // color: Colors.purple,
+                          // padding: EdgeInsets.all(10.0),
                           // decoration: BoxDecoration(borderRadius: BorderRadius.circular(10.0)),
+                          child: Image(
+                            image: AssetImage(
+                                '../../assets/images/2148171701.jpg'),
+                            fit: BoxFit.cover,
+                          ),
                         ),
                       ),
                       Column(
