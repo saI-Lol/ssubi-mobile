@@ -62,6 +62,8 @@ class _GroupEventsState extends State<GroupEvents> {
 
               // event card
               Container(
+                // decoration:
+                // BoxDecoration(borderRadius: BorderRadius.circular(10.0)),
                 color: Color(0xFFF6F7FF),
                 child: Padding(
                   padding: const EdgeInsets.all(10.0),
@@ -74,10 +76,13 @@ class _GroupEventsState extends State<GroupEvents> {
                           // color: Colors.purple,
                           // padding: EdgeInsets.all(10.0),
                           // decoration: BoxDecoration(borderRadius: BorderRadius.circular(10.0)),
-                          child: Image(
-                            image: AssetImage(
-                                '../../assets/images/2148171701.jpg'),
-                            fit: BoxFit.cover,
+                          child: ClipRRect(
+                            borderRadius: BorderRadius.circular(8.0),
+                            child: Image(
+                              image: AssetImage(
+                                  '../../assets/images/2148171701.jpg'),
+                              fit: BoxFit.cover,
+                            ),
                           ),
                         ),
                       ),
@@ -111,7 +116,7 @@ class _GroupEventsState extends State<GroupEvents> {
                             child: Column(
                               crossAxisAlignment: CrossAxisAlignment.start,
                               children: [
-                                // Datetime
+                                // Datetime of event posted
                                 Text(
                                   '28 Dec, 2024. 9AM to 1PM',
                                   style: TextStyle(
@@ -155,6 +160,21 @@ class _GroupEventsState extends State<GroupEvents> {
                               ],
                             ),
                           ),
+
+                          // time posted
+                          Padding(
+                            padding: const EdgeInsets.only(top: 10.0),
+                            child: Row(
+                              mainAxisAlignment: MainAxisAlignment.end,
+                              children: [
+                                Text(
+                                  '18:00',
+                                  style: TextStyle(
+                                      fontSize: 10.0, color: Color(0xFF999999)),
+                                ),
+                              ],
+                            ),
+                          )
                         ],
                       ),
 
