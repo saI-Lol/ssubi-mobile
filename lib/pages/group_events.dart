@@ -16,9 +16,13 @@ class _GroupEventsState extends State<GroupEvents> {
     return Scaffold(
       backgroundColor: Color(0xFFFCFEFF),
       appBar: AppBar(
+        iconTheme: IconThemeData(
+          color: Color(0xFFFCFEFF), // Change the color to your desired color
+        ),
+        leadingWidth: 28.0,
         backgroundColor: Color(0xFF647AFF),
         title: Column(
-          mainAxisAlignment: MainAxisAlignment.start,
+          crossAxisAlignment: CrossAxisAlignment.start,
           children: [
             // Name of the Support Group
             Text(
