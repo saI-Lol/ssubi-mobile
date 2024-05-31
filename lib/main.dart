@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
+import 'package:frontend/pages/crisis_hotlines.dart';
 import 'package:frontend/pages/support_groups.dart';
-// import 'package:frontend/pages/crisis_hotlines.dart';
 
 void main() {
   runApp(const MainApp());
