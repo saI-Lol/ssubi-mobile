@@ -2,9 +2,26 @@
 
 import 'package:flutter/material.dart';
 import 'package:frontend/tabs/all_groups.dart';
+import 'package:frontend/tabs/joined_groups.dart';
 
 class SupportGroups extends StatelessWidget {
-  const SupportGroups({super.key});
+  SupportGroups({super.key});
+
+  // list of support groups
+  List supportGroups = [
+    ['Strong Minds Ug', 'Strong Minds Uganda'],
+    ['Mindverse Official Group', 'Mindverse'],
+    ['Serenity Circle', 'Mending Thoughts Ug'],
+    ['Calm Minds Collective', 'Peacful Mind'],
+    ['Peaceful Pathways', 'Kampala Serenity Center'],
+    ['Dealing with Anxiety', 'Strong Minds Uganda'],
+    ['Resilient Together', 'Phoenix Recovery Clinic'],
+    ['Tranquil Minds Network', 'Tranquility Mental Wellness Center'],
+    ['Stress Stops For Good', 'Mindverse'],
+    ['Strength in Unity', 'Unity MindCare Facility'],
+    ['Healing Hearts', 'Lighthouse Wellness Clinic'],
+    ['Thrive Together Support', 'Heart to Heart'],
+  ];
 
   @override
   Widget build(BuildContext context) {
@@ -13,6 +30,7 @@ class SupportGroups extends StatelessWidget {
         child: Scaffold(
           backgroundColor: Color(0xFFFCFEFF),
           appBar: AppBar(
+            backgroundColor: Color(0xFFFCFEFF),
             elevation: 0,
             title: Text('Support Groups',
                 style: TextStyle(
@@ -21,7 +39,7 @@ class SupportGroups extends StatelessWidget {
                     fontWeight: FontWeight.w500)),
           ),
           body: Padding(
-            padding: const EdgeInsets.symmetric(horizontal: 24.0),
+            padding: const EdgeInsets.symmetric(horizontal: 16.0),
             child: Column(
               children: [
                 TabBar(
@@ -41,12 +59,14 @@ class SupportGroups extends StatelessWidget {
                 Expanded(
                   child: TabBarView(children: [
                     // First Tab
-                    AllGroups(),
+                    AllGroups(
+                      itemCount_: supportGroups.length,
+                      groupName_: supportGroups[0][0],
+                      createdBy_: supportGroups[0][1],
+                    ),
 
                     // Second Tab
-                    Scaffold(
-                      body: Text('Joined Support Groups'),
-                    ),
+                    JoinedGroups(),
                   ]),
                 )
               ],
