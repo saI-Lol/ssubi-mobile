@@ -3,14 +3,32 @@
 import 'package:flutter/material.dart';
 
 class EventCard extends StatelessWidget {
-  const EventCard({super.key});
+  // Variables that make up the event data
+  final String eventTitle;
+  final String eventDesc;
+  final String eventDate;
+  final String eventTime;
+  final String eventLocation;
+  final ImageProvider eventImage;
+  final String eventPostDate;
+
+  EventCard({
+    super.key,
+    required this.eventTitle,
+    required this.eventDesc,
+    required this.eventDate,
+    required this.eventTime,
+    required this.eventLocation,
+    required this.eventImage,
+    required this.eventPostDate,
+  });
 
   @override
   Widget build(BuildContext context) {
     return Column(
       crossAxisAlignment: CrossAxisAlignment.center,
       children: [
-        // date posted
+        // Date posted
         Padding(
           padding: const EdgeInsets.fromLTRB(0, 0, 0, 12.0),
           child: Container(
@@ -20,37 +38,32 @@ class EventCard extends StatelessWidget {
               borderRadius: BorderRadius.circular(8.0),
             ),
             child: Text(
-              '28 Dec, 2024',
+              eventPostDate,
               style: TextStyle(fontSize: 10.0, color: Color(0xFF647AFF)),
             ),
           ),
         ),
 
-        // event card
+        // Event card
         Container(
-          // decoration:
-          // BoxDecoration(borderRadius: BorderRadius.circular(10.0)),
           color: Color(0xFFF6F7FF),
           child: Padding(
             padding: const EdgeInsets.all(10.0),
             child: Column(
               children: [
-                // event image
+                // Event image
                 AspectRatio(
                   aspectRatio: 4 / 3,
-                  child: Container(
-                    // color: Colors.purple,
-                    // padding: EdgeInsets.all(10.0),
-                    // decoration: BoxDecoration(borderRadius: BorderRadius.circular(10.0)),
-                    child: ClipRRect(
-                      borderRadius: BorderRadius.circular(8.0),
-                      child: Image(
-                        image: AssetImage('../../assets/images/2148171701.jpg'),
-                        fit: BoxFit.cover,
-                      ),
+                  child: ClipRRect(
+                    borderRadius: BorderRadius.circular(8.0),
+                    child: Image(
+                      fit: BoxFit.cover,
+                      image: eventImage,
                     ),
                   ),
                 ),
+
+                // Event title and bookmark icon row
                 Column(
                   crossAxisAlignment: CrossAxisAlignment.start,
                   children: [
@@ -60,37 +73,37 @@ class EventCard extends StatelessWidget {
                         mainAxisAlignment: MainAxisAlignment.spaceBetween,
                         children: [
                           Text(
-                            'Dealing with Addiction',
+                            eventTime,
                             style: TextStyle(
                                 fontSize: 16.0,
                                 fontWeight: FontWeight.w500,
                                 color: Color(0xFF32313A)),
                           ),
-                          // bookmark icon
+                          // Bookmark icon
                           Icon(
                             Icons.bookmark,
                             color: Color(0xFFAAAAAA),
-                          )
+                          ),
                         ],
                       ),
                     ),
 
-                    // Datetime and Location Row
+                    // Datetime and location row
                     Padding(
                       padding: const EdgeInsets.only(top: 6.0),
                       child: Column(
                         crossAxisAlignment: CrossAxisAlignment.start,
                         children: [
-                          // Datetime of event posted
+                          // Datetime of event
                           Text(
-                            '28 Dec, 2024. 9AM to 1PM',
+                            '$eventDate. $eventTime',
                             style: TextStyle(
                                 fontSize: 10.0, color: Color(0xFF999999)),
                           ),
 
                           // Location
                           Text(
-                            'Lumumba Grounds, New Kira Rd Bukoto',
+                            eventLocation,
                             style: TextStyle(
                                 fontSize: 10.0, color: Color(0xFF999999)),
                           ),
@@ -98,7 +111,7 @@ class EventCard extends StatelessWidget {
                       ),
                     ),
 
-                    // event description
+                    // Event description
                     Padding(
                       padding: const EdgeInsets.only(top: 12.0),
                       child: Column(
@@ -116,7 +129,7 @@ class EventCard extends StatelessWidget {
                           Padding(
                             padding: const EdgeInsets.only(top: 6.0),
                             child: Text(
-                              'Join us and gain insights from experts, participate in workshops, and connect with a supportive community. Access resources, engage in Q&A sessions, and take the first step towards healing. \n\nWhether you\'re personally affected or supporting a loved one, find hope and guidance at our event. Reserve your spot today.',
+                              eventDesc,
                               style: TextStyle(
                                   fontSize: 14.0, color: Color(0xFF666666)),
                             ),
@@ -125,28 +138,26 @@ class EventCard extends StatelessWidget {
                       ),
                     ),
 
-                    // time posted
+                    // Time posted
                     Padding(
                       padding: const EdgeInsets.only(top: 10.0),
                       child: Row(
                         mainAxisAlignment: MainAxisAlignment.end,
                         children: [
                           Text(
-                            '18:00',
+                            eventPostDate,
                             style: TextStyle(
                                 fontSize: 10.0, color: Color(0xFF999999)),
                           ),
                         ],
                       ),
-                    )
+                    ),
                   ],
                 ),
-
-                // event title and bookmark icon row
               ],
             ),
           ),
-        )
+        ),
       ],
     );
   }
