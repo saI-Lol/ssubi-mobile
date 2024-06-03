@@ -1,6 +1,7 @@
 // ignore_for_file: library_private_types_in_public_api
 
 import 'package:flutter/material.dart';
+import 'package:frontend/pages/group_events.dart';
 
 class SupportGroups extends StatefulWidget {
   const SupportGroups({super.key});
@@ -159,8 +160,15 @@ class AllGroups extends StatelessWidget {
           padding: const EdgeInsets.fromLTRB(0, 12.0, 0, 0),
           child: GestureDetector(
             onTap: () {
-              // onTap logic here for navigating to support group details
-              Navigator.pushNamed(context, '/groupEvents');
+              Navigator.push(
+                context,
+                MaterialPageRoute(
+                  builder: (context) => GroupEvents(
+                    groupName: group['groupName'],
+                    createdBy: group['createdBy'],
+                  ),
+                ),
+              );
             },
             child: Container(
               decoration: const BoxDecoration(
