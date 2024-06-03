@@ -285,15 +285,105 @@ class JoinedGroups extends StatelessWidget {
       itemCount: supportGroups.length,
       itemBuilder: (context, index) {
         final group = supportGroups[index];
-        return ListTile(
-          title: Text(group['groupName']),
-          subtitle: Text('Created by: ${group['createdBy']}'),
-          trailing: TextButton(
-            onPressed: () => toggleJoin(index),
-            style: TextButton.styleFrom(
-              foregroundColor: const Color(0xFFF5564A),
+        return Padding(
+          padding: const EdgeInsets.fromLTRB(0, 12.0, 0, 0),
+          child: GestureDetector(
+            onTap: () {
+              Navigator.push(
+                context,
+                MaterialPageRoute(
+                  builder: (context) => GroupEvents(
+                    groupName: group['groupName'],
+                    createdBy: group['createdBy'],
+                  ),
+                ),
+              );
+            },
+            child: Container(
+              decoration: const BoxDecoration(
+                border: Border(
+                  bottom: BorderSide(
+                    color: Color(0xFFEEEEEE),
+                    width: 1,
+                  ),
+                ),
+              ),
+              padding: const EdgeInsets.fromLTRB(0, 0, 0, 12.0),
+              child: Row(
+                mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                children: [
+                  // Expanded to take available space
+                  Expanded(
+                    child: Row(
+                      children: [
+                        // Circle avatar with groupName initial
+                        CircleAvatar(
+                          radius: 24,
+                          backgroundColor: index % 2 == 0
+                              ? const Color(0xFF647AFF)
+                              : const Color(0xFFB0BCFF),
+                          child: Text(
+                            group['groupName'][0].toUpperCase(),
+                            style: const TextStyle(
+                                fontSize: 28.0,
+                                color: Color(0xFFFCFEFF),
+                                fontWeight: FontWeight.w200),
+                          ),
+                        ),
+
+                        // SizedBox to separate avatar and column
+                        const SizedBox(width: 16.0),
+
+                        // Flexible to constrain column
+                        Flexible(
+                          child: Column(
+                            crossAxisAlignment: CrossAxisAlignment.start,
+                            children: [
+                              Text(
+                                group['groupName'],
+                                overflow: TextOverflow.ellipsis,
+                                softWrap: false,
+                                style: const TextStyle(
+                                    color: Color(0xFF32313A), fontSize: 16.0),
+                              ),
+                              Text(
+                                group['createdBy'],
+                                overflow: TextOverflow.ellipsis,
+                                softWrap: false,
+                                style:
+                                    const TextStyle(color: Color(0xFF999999)),
+                              ),
+                            ],
+                          ),
+                        ),
+                      ],
+                    ),
+                  ),
+
+                  const SizedBox(width: 8.0),
+
+                  // Button
+                  SizedBox(
+                    width: 64,
+                    child: AspectRatio(
+                      aspectRatio: 2,
+                      child: TextButton(
+                        onPressed: () => toggleJoin(index),
+                        style: TextButton.styleFrom(
+                            backgroundColor: Colors.transparent,
+                            foregroundColor: const Color(0xFFF5564A),
+                            shape: RoundedRectangleBorder(
+                                borderRadius: BorderRadius.circular(6))),
+                        child: const Text(
+                          'Leave',
+                          style: TextStyle(fontSize: 14.0),
+                        ),
+                      ),
+                    ),
+                  ),
+                ],
+              ),
             ),
-            child: const Text('Leave'),
           ),
         );
       },
