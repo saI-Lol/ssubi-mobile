@@ -9,20 +9,67 @@ class DailyTips extends StatelessWidget {
   Widget build(BuildContext context) {
     return  Scaffold(
       appBar: AppBar(
-        title: Text("Today's Tips"),
-        backgroundColor: Colors.blue,
+        title: Text("Today's Tips",
+        style: TextStyle(color: Colors.white),
+        ),
+        backgroundColor: Colors.blue[900],
         elevation: 0,
-        leading: Icon(Icons.arrow_back),
+        leading: IconButton(
+          icon: Icon(Icons.arrow_back, color: Colors.white),
+          onPressed: () {
+            // handle back button press
 
-      
+          },
+        ),
 
       ),
-      body: TipScreen(),
+
+      body: Center(
+        /*child: Padding(
+          padding: const EdgeInsets.symmetric( horizontal: 16.0),
+          ),*/
+          child: Column(
+            mainAxisAlignment:MainAxisAlignment.center,
+            children: [
+              Image.asset('lib/assets/7.png',
+                width: 100,
+                height: 100,
+              ),
+
+              SizedBox(height: 20),
+              Text(
+                ' lorem ipsum dolor sit amet',
+                style: TextStyle(
+                  fontSize: 24,
+                  fontWeight: FontWeight.bold,
+                ),
+              ),
+
+              SizedBox(height: 10),
+              Text(
+                ' lorem ipsum dolor sit amet',
+                style: TextStyle(
+                  fontSize: 16,
+                  color: Colors.grey,
+                ),
+              ),
+
+              SizedBox(height: 20),
+              ElevatedButton(
+                onPressed: () {
+
+                },
+                child: Text('Copy to clipboard'),
+              ),
+            ],
+          ),
+      ),
+      
     );
   }
 }
 
-class TipScreen extends StatelessWidget {
+/*class TipScreen extends StatelessWidget {
   const TipScreen({super.key});
 
   @override
@@ -72,4 +119,4 @@ class TipScreen extends StatelessWidget {
     );
   }
   
-  }
+  }*/
