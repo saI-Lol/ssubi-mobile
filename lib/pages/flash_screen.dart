@@ -6,7 +6,15 @@ class FlashScreen extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return const Scaffold(
-      backgroundColor: Color.fromRGBO(7, 136, 241, 1),
+      backgroundColor: Colors.blue,
+      body: Center(
+        child: Image(
+          image: AssetImage('lib/assets/1.png'),
+          height: 200,
+          width: 200,
+          ),
+
+      ),
       
     );
   }
