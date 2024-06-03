@@ -1,10 +1,10 @@
-// ignore_for_file: prefer_const_constructors
+// ignore_for_file: prefer_const_constructors, prefer_const_literals_to_create_immutables
 
 import 'package:flutter/material.dart';
 import 'package:flutter/rendering.dart';
 import 'package:flutter/widgets.dart';
 
-
+import 'package:flutter_application_1/pages/home.dart';
 
 class GetStarted extends StatelessWidget {
   const GetStarted({super.key});
@@ -22,21 +22,21 @@ class GetStarted extends StatelessWidget {
               Row(
                 mainAxisAlignment: MainAxisAlignment.spaceBetween,
                 children: [
-                   Image.asset(
-                'assets/left_hand.png',
-                width: 50,
-                height: 50,
-              ),
-              Image.asset(
-                'assets/right_hand.png',
-                width: 50,
-                height: 50,
+                  Image.asset(
+                    'lib/assets/3.png',
+                    width: 200,
+                    height: 200,
+                  ),
 
-              ),
-
+                  Image.asset(
+                    'lib/assets/2.png',
+                    width: 100,
+                    height:200,
+                  ),
+                
                 ],
               ),
-                SizedBox(height: 20),
+                SizedBox(height: 50),
           Text(
             'Welcome to Subbi Mental Wellness!',
             textAlign: TextAlign.center,
@@ -58,11 +58,17 @@ class GetStarted extends StatelessWidget {
            Spacer(flex: 2),
            Center(
             child: ElevatedButton(
-              onPressed: () {},
-              style: ElevatedButton.styleFrom() ,
-            ),
+              child: Text('Get Started'),
+              onPressed: (){
+                // navigate to the next page
+                Navigator.push(context, MaterialPageRoute(builder: (context) => Home(),
+                ),
+                );
+              }, 
+              ),
             
            ),
+           Spacer(flex:1),
         
              
             ],
