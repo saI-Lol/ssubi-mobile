@@ -58,13 +58,24 @@ class GetStarted extends StatelessWidget {
            Spacer(flex: 2),
            Center(
             child: ElevatedButton(
-              child: Text('Get Started'),
+              style: ElevatedButton.styleFrom(
+                shape: RoundedRectangleBorder(
+                  borderRadius: BorderRadius.circular(8.0),
+
+                ),
+              ),
+              child: Text('Get Started',
+              style: TextStyle(
+                color: Colors.black,
+              ),
+              ),
               onPressed: (){
                 // navigate to the next page
                 Navigator.push(context, MaterialPageRoute(builder: (context) => Home(),
                 ),
                 );
               }, 
+              
               ),
             
            ),
