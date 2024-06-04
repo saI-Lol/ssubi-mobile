@@ -1,6 +1,7 @@
 // ignore_for_file: must_be_immutable, prefer_const_constructors
 
 import 'package:flutter/material.dart';
+import 'package:frontend/pages/blog_details.dart';
 import 'package:frontend/util/blog_tile.dart';
 
 class Blog extends StatelessWidget {
@@ -71,10 +72,26 @@ class Blog extends StatelessWidget {
           itemCount: blogs.length,
           itemBuilder: (context, index) {
             final blog = blogs[index];
-            return BlogTile(
-                blogTitle: blog['blogTitle'],
-                blogAuthor: blog['blogAuthor'],
-                blogDate: blog['blogDate']);
+            return GestureDetector(
+              // method that navigates to blog details screen
+              onTap: () {
+                Navigator.push(
+                  context,
+                  MaterialPageRoute(
+                    builder: (context) => BlogDetails(
+                      blogTitle: blog['blogName'],
+                      blogAuthor: blog['blogAuthor'],
+                      blogDate: blog['blogDate'],
+                      blogContent: blog['blogContent'],
+                    ),
+                  ),
+                );
+              },
+              child: BlogTile(
+                  blogTitle: blog['blogTitle'],
+                  blogAuthor: blog['blogAuthor'],
+                  blogDate: blog['blogDate']),
+            );
           }),
     );
   }
