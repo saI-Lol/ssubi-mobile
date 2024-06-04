@@ -43,7 +43,7 @@ class Home extends StatelessWidget {
             SizedBox(height: 40.0),
             Container(
               decoration: BoxDecoration(
-                color: Colors.blue[100],
+                color: Colors.purple[50],
                 borderRadius: BorderRadius.circular(8.0),
               ),
               padding: EdgeInsets.all(16.0),
@@ -71,7 +71,7 @@ class Home extends StatelessWidget {
                         ),
                         ElevatedButton(
                           style: ElevatedButton.styleFrom(
-                            backgroundColor: Colors.blue[500],
+                            backgroundColor: Colors.blue[200],
                             shape: RoundedRectangleBorder(
                               borderRadius: BorderRadius.circular(8.0),
                             ),
@@ -131,7 +131,7 @@ class Home extends StatelessWidget {
                 Expanded(
                   child: Container(
                     decoration: BoxDecoration(
-                      color: Colors.orange[100],
+                      color: const Color.fromARGB(255, 249, 219, 229),
                       borderRadius: BorderRadius.circular(8.0),
                     ),
                     padding: EdgeInsets.all(16.0),
