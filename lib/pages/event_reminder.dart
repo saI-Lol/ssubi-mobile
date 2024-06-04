@@ -12,7 +12,7 @@ class EventReminder extends StatelessWidget {
         title: Text("Reminder",
         style: TextStyle(color: Colors.white),
         ),
-        backgroundColor: Colors.blue[900],
+        backgroundColor: Colors.blue[500],
         elevation: 0,
         leading: IconButton(
           icon: Icon(Icons.arrow_back, color: Colors.white),
@@ -33,16 +33,7 @@ class EventReminder extends StatelessWidget {
             height: 200,
             ),
 
-            /* CircleAvatar(
-              radius: 40,
-              backgroundColor: Colors.blue[100],
-              child: Icon(
-                Icons.help_outline,
-                size: 40,
-                color: Colors.blue,
-
-              ),
-            ),*/
+    
 
             SizedBox(height: 20),  // space between the image and text
             Text(
