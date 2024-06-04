@@ -13,7 +13,7 @@ class CrisisHotlines extends StatelessWidget {
         title: Text("Crisis Hotlines",
         style: TextStyle(color: Colors.white),
         ),
-        backgroundColor: Colors.blue[900],
+        backgroundColor: Colors.blue[500],
         elevation: 0,
         leading: IconButton(
           icon: Icon(Icons.arrow_back, color: Colors.white),
@@ -31,12 +31,20 @@ class CrisisHotlines extends StatelessWidget {
           ListTile(
             leading: CircleAvatar(),
             title: Text("'Strong Minds Uganda','0800 800 800'"),
+            
             trailing: ElevatedButton(
               onPressed: () {
                 // handle call action
               },
-              child: Text('call'),
+              child: Text('call',
+              style: TextStyle(
+                color: Colors.white
+              ),
+              ),
               style: ElevatedButton.styleFrom(
+                shape: RoundedRectangleBorder(
+                  borderRadius: BorderRadius.circular(8.0)
+                ),
                 backgroundColor: Colors.green,
                 
               ),
@@ -48,11 +56,20 @@ class CrisisHotlines extends StatelessWidget {
             title: Text("'Strong Minds Uganda','0800 800 800'"),
             
             trailing: ElevatedButton(
+              
               onPressed: () {
                 // handle call action
               },
-              child: Text('call'),
+              child: Text('call',
+              style: TextStyle(
+                color: Colors.white,
+
+              ),
+              ),
               style: ElevatedButton.styleFrom(
+                shape:  RoundedRectangleBorder(
+                              borderRadius: BorderRadius.circular(8.0),
+                            ),
                 backgroundColor: Colors.green,
                 
                 
@@ -61,6 +78,8 @@ class CrisisHotlines extends StatelessWidget {
                 
               
             ),
+
+            
           ),
 
              ListTile(
@@ -70,8 +89,15 @@ class CrisisHotlines extends StatelessWidget {
               onPressed: () {
                 // handle call action
               },
-              child: Text('call'),
+              child: Text('call',
+              style: TextStyle(
+                color: Colors.white,
+              ),
+              ),
               style: ElevatedButton.styleFrom(
+                shape:  RoundedRectangleBorder(
+                              borderRadius: BorderRadius.circular(8.0),
+                            ),
                 backgroundColor: Colors.green,
               ),
             ),
