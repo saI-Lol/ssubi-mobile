@@ -12,7 +12,7 @@ class DailyTips extends StatelessWidget {
         title: Text("Today's Tips",
         style: TextStyle(color: Colors.white),
         ),
-        backgroundColor: Colors.blue[900],
+        backgroundColor: Colors.blue[500],
         elevation: 0,
         leading: IconButton(
           icon: Icon(Icons.arrow_back, color: Colors.white),
@@ -32,8 +32,8 @@ class DailyTips extends StatelessWidget {
             mainAxisAlignment:MainAxisAlignment.center,
             children: [
               Image.asset('lib/assets/7.png',
-                width: 100,
-                height: 100,
+                width: 200,
+                height: 200,
               ),
 
               SizedBox(height: 20),
@@ -69,54 +69,4 @@ class DailyTips extends StatelessWidget {
   }
 }
 
-/*class TipScreen extends StatelessWidget {
-  const TipScreen({super.key});
 
-  @override
-  Widget build(BuildContext context) {
-    return Center(
-      child: Padding(
-        padding: const EdgeInsets.all(16.0),
-        child: Column(
-          mainAxisAlignment: MainAxisAlignment.center,
-          children: [
-            Icon(
-              Icons.lightbulb_outline,
-              size:100,
-              color:Colors.blue,
-            ),
-            SizedBox(height:20),
-            Text(
-              'anything',
-              style: TextStyle(
-                fontSize: 24,
-                fontWeight: FontWeight.bold
-              ),
-              textAlign: TextAlign.center,
-            ),
-            
-            SizedBox(height: 10),
-            Text(
-              'anything',
-              style: TextStyle(
-                fontSize: 16),
-                textAlign: TextAlign.center,   
-            ),
-            SizedBox(height: 30),
-            ElevatedButton(
-              onPressed: () {
-                //handle copy to clipboard
-              },
-              child: Text('copy to Clipboard'),
-            ),
-
-
-
-          ]
-        ),
-      ),
-
-    );
-  }
-  
-  }*/
