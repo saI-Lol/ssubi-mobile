@@ -1,5 +1,3 @@
-// ignore_for_file: prefer_const_constructors, prefer_const_constructors_in_immutables
-
 import 'package:flutter/material.dart';
 
 class HotlineTile extends StatelessWidget {
@@ -8,7 +6,7 @@ class HotlineTile extends StatelessWidget {
   final Color avatarColor;
 
   // HotlineTile class constructor
-  HotlineTile({
+  const HotlineTile({
     super.key,
     required this.tileName,
     required this.tileHotline,
@@ -18,9 +16,9 @@ class HotlineTile extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Padding(
-      padding: EdgeInsets.fromLTRB(12.0, 12.0, 12.0, 0),
+      padding: const EdgeInsets.fromLTRB(12.0, 12.0, 12.0, 0),
       child: Container(
-        decoration: BoxDecoration(
+        decoration: const BoxDecoration(
           border: Border(
             bottom: BorderSide(
               color: Color(0xFFEEEEEE),
@@ -28,7 +26,7 @@ class HotlineTile extends StatelessWidget {
             ),
           ),
         ),
-        padding: EdgeInsets.fromLTRB(0, 0, 0, 12.0),
+        padding: const EdgeInsets.fromLTRB(0, 0, 0, 12.0),
         child: Row(
           mainAxisAlignment: MainAxisAlignment.spaceBetween,
           children: [
@@ -42,7 +40,7 @@ class HotlineTile extends StatelessWidget {
                     backgroundColor: avatarColor,
                     child: Text(
                       tileName[0].toUpperCase(),
-                      style: TextStyle(
+                      style: const TextStyle(
                           fontSize: 28.0,
                           color: Color(0xFFFCFEFF),
                           fontWeight: FontWeight.w200),
@@ -50,7 +48,7 @@ class HotlineTile extends StatelessWidget {
                   ),
 
                   // SizedBox to separate avatar and column
-                  SizedBox(width: 16.0),
+                  const SizedBox(width: 16.0),
 
                   // Flexible to constrain column
                   Flexible(
@@ -61,14 +59,14 @@ class HotlineTile extends StatelessWidget {
                           tileName,
                           overflow: TextOverflow.ellipsis,
                           softWrap: false,
-                          style: TextStyle(
+                          style: const TextStyle(
                               fontSize: 16.0, color: Color(0xFF32313A)),
                         ),
                         Text(
                           tileHotline,
                           overflow: TextOverflow.ellipsis,
                           softWrap: false,
-                          style: TextStyle(
+                          style: const TextStyle(
                               fontSize: 12.0, color: Color(0xFF666666)),
                         ),
                       ],
@@ -85,14 +83,17 @@ class HotlineTile extends StatelessWidget {
                 aspectRatio: 2,
                 child: TextButton(
                   onPressed: () {},
-                  child: Text(
-                    'Call',
-                    style: TextStyle(color: Color(0xFFFCFEFF), fontSize: 14.0),
-                  ),
                   style: TextButton.styleFrom(
-                      backgroundColor: Color(0xFF58D68D),
+                      backgroundColor: const Color(0xFF58D68D),
                       shape: RoundedRectangleBorder(
                           borderRadius: BorderRadius.circular(6))),
+                  child: const Center(
+                    child: Text(
+                      'Call',
+                      style:
+                          TextStyle(color: Color(0xFFFCFEFF), fontSize: 14.0),
+                    ),
+                  ),
                 ),
               ),
             )
