@@ -73,11 +73,13 @@ class EventCard extends StatelessWidget {
                         mainAxisAlignment: MainAxisAlignment.spaceBetween,
                         children: [
                           Text(
-                            eventTime,
+                            eventTitle,
                             style: TextStyle(
-                                fontSize: 16.0,
+                                fontSize: 20.0,
                                 fontWeight: FontWeight.w500,
                                 color: Color(0xFF32313A)),
+                            maxLines: 2,
+                            overflow: TextOverflow.ellipsis,
                           ),
                           // Bookmark icon
                           Icon(
