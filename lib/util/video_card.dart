@@ -16,11 +16,11 @@ class VideoCard extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Padding(
-      padding: const EdgeInsets.only(top: 16.0),
+      padding: const EdgeInsets.only(top: 16.0, bottom: 8.0),
       child: Container(
-        padding: const EdgeInsets.symmetric(horizontal: 12, vertical: 16),
+        padding: const EdgeInsets.fromLTRB(12, 12, 12, 16),
         decoration: const BoxDecoration(
-          borderRadius: BorderRadius.all(Radius.circular(10)),
+          borderRadius: BorderRadius.all(Radius.circular(16)),
           color: Color(0xFFF6F7FF),
         ),
         child: Column(
@@ -38,7 +38,7 @@ class VideoCard extends StatelessWidget {
             ),
             // Video title
             Padding(
-              padding: const EdgeInsets.only(bottom: 8.0),
+              padding: const EdgeInsets.symmetric(vertical: 8.0),
               child: Text(
                 videoTitle,
                 style: const TextStyle(
