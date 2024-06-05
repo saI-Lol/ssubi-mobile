@@ -1,4 +1,8 @@
 import 'package:flutter/material.dart';
+import 'package:frontend/pages/crisis_hotlines.dart';
+import 'package:frontend/pages/facilities.dart';
+import 'package:frontend/pages/feed.dart';
+import 'package:frontend/pages/group_details.dart';
 import 'package:frontend/pages/support_groups.dart';
 
 void main() {

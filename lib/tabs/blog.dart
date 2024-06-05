@@ -79,7 +79,7 @@ class Blog extends StatelessWidget {
                   context,
                   MaterialPageRoute(
                     builder: (context) => BlogDetails(
-                      blogTitle: blog['blogName'],
+                      blogTitle: blog['blogTitle'],
                       blogAuthor: blog['blogAuthor'],
                       blogDate: blog['blogDate'],
                       blogContent: blog['blogContent'],

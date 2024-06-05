@@ -1,9 +1,8 @@
-// ignore_for_file: prefer_const_literals_to_create_immutables, prefer_const_constructors
+// ignore_for_file: prefer_const_literals_to_create_immutables
 
 import 'package:flutter/material.dart';
-import 'package:frontend/pages/test.dart';
+import 'package:frontend/pages/group_details.dart';
 import 'package:frontend/util/event_card.dart';
-import 'package:frontend/pages/group_details.dart'; // Import the GroupDetails screen
 
 class GroupEvents extends StatefulWidget {
   final String groupName;
@@ -26,7 +25,7 @@ class _GroupEventsState extends State<GroupEvents> {
       '28 Dec, 2024',
       '9AM to 1PM',
       'Lumumba Grounds, New Kira Rd, Bukoto.',
-      AssetImage('assets/images/anxiety.jpg'),
+      const AssetImage('assets/images/anxiety.jpg'),
       '18:00'
     ],
     [
@@ -35,7 +34,7 @@ class _GroupEventsState extends State<GroupEvents> {
       '18 Oct, 2024',
       '9AM to 1PM',
       'Serena Conference Center, Kampala.',
-      AssetImage('assets/images/together.jpg'),
+      const AssetImage('assets/images/together.jpg'),
       'Yesterday at 09:15'
     ],
   ];
@@ -43,20 +42,20 @@ class _GroupEventsState extends State<GroupEvents> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      backgroundColor: Color(0xFFFCFEFF),
+      backgroundColor: const Color(0xFFFCFEFF),
       appBar: AppBar(
-        iconTheme: IconThemeData(
+        iconTheme: const IconThemeData(
           color: Color(0xFFFCFEFF),
         ),
-        leadingWidth: 28.0,
-        backgroundColor: Color(0xFF647AFF),
+        leadingWidth: 32.0,
+        backgroundColor: const Color(0xFF647AFF),
         title: GestureDetector(
           onTap: () {
             // Navigate to GroupDetails screen when the appbar is tapped
             Navigator.push(
               context,
               MaterialPageRoute(
-                builder: (context) => GroupDetails_(
+                builder: (context) => GroupDetails(
                   groupName: widget.groupName,
                   createdBy: widget.createdBy,
                   // groupDesc: widget.description,
@@ -71,13 +70,15 @@ class _GroupEventsState extends State<GroupEvents> {
               // Name of the Support Group
               Text(
                 widget.groupName,
-                style: TextStyle(fontSize: 20.0, color: Color(0xFFFCFEFF)),
+                style:
+                    const TextStyle(fontSize: 20.0, color: Color(0xFFFCFEFF)),
               ),
 
               // Name of respective Mental Health Facility
               Text(
                 widget.createdBy,
-                style: TextStyle(fontSize: 12.0, color: Color(0xFFD1D7FF)),
+                style:
+                    const TextStyle(fontSize: 12.0, color: Color(0xFFD1D7FF)),
               ),
             ],
           ),
