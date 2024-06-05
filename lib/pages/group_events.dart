@@ -1,21 +1,24 @@
 // ignore_for_file: prefer_const_literals_to_create_immutables, prefer_const_constructors
 
 import 'package:flutter/material.dart';
+import 'package:frontend/pages/test.dart';
 import 'package:frontend/util/event_card.dart';
+import 'package:frontend/pages/group_details.dart'; // Import the GroupDetails screen
 
 class GroupEvents extends StatefulWidget {
   final String groupName;
   final String createdBy;
 
   const GroupEvents(
-      {super.key, required this.groupName, required this.createdBy});
+      {Key? key, required this.groupName, required this.createdBy})
+      : super(key: key);
 
   @override
   State<GroupEvents> createState() => _GroupEventsState();
 }
 
 class _GroupEventsState extends State<GroupEvents> {
-  // list of event data
+  // List of event data
   List<List<dynamic>> events = [
     [
       'Dealing with Addiction',
@@ -23,7 +26,7 @@ class _GroupEventsState extends State<GroupEvents> {
       '28 Dec, 2024',
       '9AM to 1PM',
       'Lumumba Grounds, New Kira Rd, Bukoto.',
-      AssetImage('assets/images/2148171701.jpg'),
+      AssetImage('assets/images/anxiety.jpg'),
       '18:00'
     ],
     [
@@ -32,7 +35,7 @@ class _GroupEventsState extends State<GroupEvents> {
       '18 Oct, 2024',
       '9AM to 1PM',
       'Serena Conference Center, Kampala.',
-      AssetImage('assets/images/2148171701.jpg'),
+      AssetImage('assets/images/together.jpg'),
       'Yesterday at 09:15'
     ],
   ];
@@ -47,21 +50,37 @@ class _GroupEventsState extends State<GroupEvents> {
         ),
         leadingWidth: 28.0,
         backgroundColor: Color(0xFF647AFF),
-        title: Column(
-          crossAxisAlignment: CrossAxisAlignment.start,
-          children: [
-            // Name of the Support Group
-            Text(
-              widget.groupName,
-              style: TextStyle(fontSize: 20.0, color: Color(0xFFFCFEFF)),
-            ),
+        title: GestureDetector(
+          onTap: () {
+            // Navigate to GroupDetails screen when the appbar is tapped
+            Navigator.push(
+              context,
+              MaterialPageRoute(
+                builder: (context) => GroupDetails_(
+                  groupName: widget.groupName,
+                  createdBy: widget.createdBy,
+                  // groupDesc: widget.description,
+                  // dateCreated: widget.dateCreated,
+                ),
+              ),
+            );
+          },
+          child: Column(
+            crossAxisAlignment: CrossAxisAlignment.start,
+            children: [
+              // Name of the Support Group
+              Text(
+                widget.groupName,
+                style: TextStyle(fontSize: 20.0, color: Color(0xFFFCFEFF)),
+              ),
 
-            // Name of respective Mental Health Facility
-            Text(
-              widget.createdBy,
-              style: TextStyle(fontSize: 12.0, color: Color(0xFFD1D7FF)),
-            ),
-          ],
+              // Name of respective Mental Health Facility
+              Text(
+                widget.createdBy,
+                style: TextStyle(fontSize: 12.0, color: Color(0xFFD1D7FF)),
+              ),
+            ],
+          ),
         ),
       ),
       body: ListView.builder(
