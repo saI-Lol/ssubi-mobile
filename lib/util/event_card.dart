@@ -12,7 +12,7 @@ class EventCard extends StatelessWidget {
   final ImageProvider eventImage;
   final String eventPostDate;
 
-  EventCard({
+  const EventCard({
     super.key,
     required this.eventTitle,
     required this.eventDesc,
@@ -82,7 +82,7 @@ class EventCard extends StatelessWidget {
                           // Bookmark icon
                           Icon(
                             Icons.bookmark,
-                            color: Color(0xFFAAAAAA),
+                            color: Color(0xFFD1D1D1),
                           ),
                         ],
                       ),
