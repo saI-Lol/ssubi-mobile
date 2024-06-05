@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:frontend/tabs/blog.dart';
+import 'package:frontend/tabs/video.dart';
 
 class Feed extends StatelessWidget {
   const Feed({super.key});
@@ -47,7 +48,10 @@ class Feed extends StatelessWidget {
                     child: Blog(),
                   ),
                   // Second Tab: Joined Groups
-                  const Text('Video'),
+                  Padding(
+                    padding: const EdgeInsets.only(bottom: 16.0),
+                    child: Video(),
+                  ),
                 ]),
               )
             ],
