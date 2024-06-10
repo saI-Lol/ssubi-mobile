@@ -14,7 +14,7 @@ class Feed extends StatelessWidget {
         appBar: AppBar(
           backgroundColor: const Color(0xFFFCFEFF),
           elevation: 0,
-          title: const Text('Feed',
+          title: const Text('Your Feed',
               style: TextStyle(
                   fontSize: 24.0,
                   color: Color(0xFF32313A),
